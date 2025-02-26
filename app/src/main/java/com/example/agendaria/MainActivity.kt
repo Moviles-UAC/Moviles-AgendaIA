@@ -1,5 +1,6 @@
 package com.example.agendaria
 
+import android.content.Intent
 import android.os.Bundle
 import com.google.android.material.snackbar.Snackbar
 import androidx.appcompat.app.AppCompatActivity
@@ -12,6 +13,7 @@ import android.view.MenuItem
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.agendaria.databinding.ActivityMainBinding
+import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class MainActivity : AppCompatActivity() {
     private lateinit var recyclerView: RecyclerView
@@ -20,6 +22,8 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        val bottomNavigationView = findViewById<BottomNavigationView>(R.id.bottomNavigationView)
 
         // Configurar RecyclerView
         recyclerView = findViewById(R.id.recyclerView)
@@ -37,5 +41,27 @@ class MainActivity : AppCompatActivity() {
         // Asignar Adaptador
         adapter = ActividadAdapter(actividades)
         recyclerView.adapter = adapter
+
+        bottomNavigationView.setOnNavigationItemSelectedListener { item ->
+            when (item.itemId) {
+                R.id.nav_alacena -> {
+                    val intent = Intent(this, AlacenaActivity::class.java)
+                    startActivity(intent)
+                    true
+                }
+
+                R.id.nav_home -> {
+                    // Si ya estás en MainActivity, no hagas nada
+                    true
+                }
+
+                R.id.nav_perfil -> {
+                    // Aquí podrías abrir otra actividad si tienes una pantalla de perfil
+                    true
+                }
+
+                else -> false
+            }
+        }
     }
 }
