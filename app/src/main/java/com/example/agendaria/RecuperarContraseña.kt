@@ -18,8 +18,6 @@ class RecuperarContraseña : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.recuperar_passoword) // Assuming you have the layout file
-
-        emailInputLayout = findViewById(R.id.emailInputLayout)
         emailEditText = findViewById(R.id.emailEditText)
         sendEmailButton = findViewById(R.id.sendEmailButton)
 
