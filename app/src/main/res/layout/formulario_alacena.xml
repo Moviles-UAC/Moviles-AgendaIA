@@ -1,54 +1,75 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
+    android:background="@android:color/white"
     android:gravity="center"
-    android:padding="16dp"
-    android:background="@android:color/white">
+    android:orientation="vertical"
+    android:padding="16dp">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="16dp"
         android:gravity="center"
-        android:text="Alacena"
         android:paddingBottom="29mm"
+        android:text="Alacena"
         android:textSize="24sp"
         android:textStyle="bold" />
 
-    <EditText
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/nombreProductoInputLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Nombre del producto"
-        android:background="@android:drawable/editbox_background"
-        android:padding="10dp"
-        android:layout_marginBottom="10dp"/>
+        android:layout_marginBottom="10dp"
+        android:hint="Nombre del producto">
 
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Precio"
-        android:inputType="numberDecimal"
-        android:background="@android:drawable/editbox_background"
-        android:padding="10dp"
-        android:layout_marginBottom="10dp"/>
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/nombreProductoEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:drawable/editbox_background"
+            android:padding="10dp" />
+    </com.google.android.material.textfield.TextInputLayout>
 
-    <EditText
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/precioInputLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Cantidad disponible"
-        android:inputType="number"
-        android:background="@android:drawable/editbox_background"
-        android:padding="10dp"
-        android:layout_marginBottom="20dp"/>
+        android:layout_marginBottom="10dp"
+        android:hint="Precio">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/precioEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:drawable/editbox_background"
+            android:inputType="numberDecimal"
+            android:padding="10dp" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/cantidadInputLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:hint="Cantidad disponible">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/cantidadEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:drawable/editbox_background"
+            android:inputType="number"
+            android:padding="10dp" />
+    </com.google.android.material.textfield.TextInputLayout>
 
     <Button
+        android:id="@+id/confirmarButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Confirmar"
         android:backgroundTint="#A9D9ED"
-        android:textColor="@android:color/white"
-        android:padding="12dp"/>
+        android:padding="12dp"
+        android:text="Confirmar"
+        android:textColor="@android:color/white" />
 </LinearLayout>
