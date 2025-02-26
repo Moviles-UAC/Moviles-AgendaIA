@@ -6,8 +6,6 @@ import android.view.View
 import android.widget.Button
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import androidx.compose.ui.semantics.error
-import androidx.compose.ui.semantics.text
 import com.google.android.material.textfield.TextInputEditText
 import com.google.android.material.textfield.TextInputLayout
 
@@ -19,7 +17,7 @@ class RecuperarContraseña : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.recuperar_password) // Assuming you have the layout file
+        setContentView(R.layout.recuperar_passoword) // Assuming you have the layout file
 
         emailInputLayout = findViewById(R.id.emailInputLayout)
         emailEditText = findViewById(R.id.emailEditText)
